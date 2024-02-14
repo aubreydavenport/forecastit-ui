@@ -1,0 +1,36 @@
+.Logo {
+  height: 6vmin;
+  width: 6vmin;
+}
+
+.Weather-icon {
+  height: 10vmin;
+  width: 10vmin;
+}
+
+.App-header {
+  background-color: #FDFD96;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Title {
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+.Weather-panel {
+  border: 2px solid black;
+  color: black ;
+  font-size: 14px;
+  padding: 8px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FCB76D
+}
+
