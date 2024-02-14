@@ -14,7 +14,7 @@ function WeatherHistoryModal({city}) {
         setModalOpen(!modalOpen)
     }
     const columnDefs = [
-        { headerName: 'Days Ago (24 hr increments)', field: 'daysAgo' },
+        { headerName: 'Days Ago*', field: 'daysAgo' },
         { headerName: 'Temperature (°F)', field: 'temp' },
         { headerName: 'Main Weather', field: 'main' },
         { headerName: 'Description', field: 'desc' }
@@ -22,17 +22,11 @@ function WeatherHistoryModal({city}) {
 
     const gridOptions = {
         overlayLoadingTemplate: '<span>Loading...</span>',
-        suppressHorizontalScroll: true,
-        // modules: [AllCommunityModules, CsvExportModule],
-        // csvExportParams: {
-        //     suppressQuotes: true,
-        //     fileName: 'pastWeather.csv',
-        //     exportType: 'csv'
-        // }
+        suppressHorizontalScroll: false,
     };
 
     useEffect(() => {
-        fetch("http://localhost:5000/past/weather?city=" + city)
+        fetch(window.host + "/past/weather?city=" + city)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Unsuccessful call to /past/weather API");
@@ -64,7 +58,7 @@ function WeatherHistoryModal({city}) {
                     <Modal.Title>Last Week's Weather</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="ag-theme-alpine" style={{height: '500px', width: '775px'}}>
+                    <div className="ag-theme-alpine" style={{height: '500px', width: '100%'}}>
                         <AgGridReact
                             columnDefs={columnDefs}
                             rowData={isLoading ? null : rowData}

@@ -10,7 +10,7 @@ function App() {
     const [selectedWeathers, setSelectedWeathers] = React.useState(new Map())
 
     const pullWeatherData = () => {
-        fetch("http://localhost:5000/weather?city=" + selectedCity)
+        fetch(window.host + "/weather?city=" + selectedCity)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Unsuccessful call to /weather API");
