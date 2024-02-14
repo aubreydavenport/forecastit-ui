@@ -66,6 +66,7 @@ function WeatherHistoryModal({city}) {
                             ref={gridRef}
                         />
                     </div>
+                    <p>(*Incremented in exact 24 hour periods from current time)</p>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-primary" onClick={exportWeather}>
